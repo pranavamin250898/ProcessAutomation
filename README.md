@@ -21,7 +21,7 @@
 <p>
   <em>Architecture Diagram:</em><br>
   <!-- Replace the src with your repo image path, e.g., docs/flow-architecture.png -->
-  <img src="docs/flow-architecture.png" alt="Flow Architecture Diagram" width="900">
+  <img src="https://github.com/pranavamin250898/ProcessAutomation/blob/main/Process%20Automation.png" alt="Flow Architecture Diagram" width="900">
 </p>
 
 <hr>
