@@ -9,6 +9,13 @@
   response details, evaluates the comment category (<code>CommentsType</code>),
   and routes the item to the correct branch for downstream actions.
 </p>
+<p>
+  <strong>Based on the option selected in the Microsoft Form, the flow triages
+  each submission:</strong> the selected value is stored in
+  <code>CommentsType</code>, the <em>Switch</em> evaluates it, and the run
+  proceeds through the appropriate branch (Condominium, Site Plan, Subdivision,
+  Consent) or defaults to a catch-all path.
+</p>
 
 <!-- Optional: include your architecture image -->
 <p>
@@ -93,48 +100,4 @@
 <p>
   The flow groups related steps inside a <strong>Comments</strong> scope for clarity and maintainability.
   This structure makes it easier to update actions per branch and to troubleshoot failures with
-  scoped run-after settings and consolidated error handling.
-</p>
-
-<hr>
-
-<h2>Key Benefits</h2>
-<ul>
-  <li><strong>Automated sorting:</strong> Eliminates manual triage of responses.</li>
-  <li><strong>Consistency:</strong> Ensures each category follows a standardized process.</li>
-  <li><strong>Scalability:</strong> New branches can be added as additional application types emerge.</li>
-  <li><strong>Safety net:</strong> The <em>Default</em> path captures unexpected values for follow-up.</li>
-</ul>
-
-<hr>
-
-<h2>How to Extend</h2>
-<ol>
-  <li>Add more <code>Switch</code> cases for new application types (e.g., Zoning By-law Amendment).</li>
-  <li>Populate the <strong>Default</strong> branch with logging to a list/table and an alert to the team.</li>
-  <li>Enhance each branch with:
-    <ul>
-      <li>SharePoint/Dataverse record creation</li>
-      <li>Stakeholder notifications (Outlook/Teams)</li>
-      <li>Document generation or approvals</li>
-      <li>Error handling and run-after logic</li>
-    </ul>
-  </li>
-</ol>
-
-<hr>
-
-<h2>Field Expectations</h2>
-<ul>
-  <li><code>CommentsType</code>: The categorical selector that drives the <code>Switch</code> (e.g., <em>Condominium</em>, <em>Site Plan</em>, <em>Subdivision</em>, <em>Consent</em>).</li>
-  <li>Other fields: Free-text comments, submitter info, file links, etc., can be consumed within each branch as needed.</li>
-</ul>
-
-<hr>
-
-<h2>Summary</h2>
-<p>
-  This flow streamlines municipal comment handling by automatically identifying the submission type
-  and triggering a consistent set of actions per category. It reduces manual work, minimizes errors,
-  and provides a scalable foundation for future process improvements.
-</p>
+  scoped run-after s
